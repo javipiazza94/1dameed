@@ -8,13 +8,12 @@ print("-----------------------EJERCICIOS 1 Y 2 ---------------------------")
 
 frase = "Estamos realizando la prueba de la función"
 def contar_palabras_sin_acento(frase):
-    frase = re.sub(r'[^\w\s]', ' ', frase)  # elimina cualquier signo de puntuación
-    palabras = unicodedata.normalize('NFD', frase).encode('ascii', 'ignore').decode()
-    print("La frase sin acento es: "+palabras)
-    palabras = frase.split()
-    return len(palabras)
+    palabras = unicodedata.normalize('NFD', frase).encode('ascii', 'ignore').decode() #Ignoramos los signos de puntuacion
+    print("La frase sin acento es: "+palabras) #(E2)
+    palabras = frase.split() # Se convierte en una lista con las palabras
+    return len(palabras) # devuelve el numero de palabras
 print(frase)
-print("La frase de prueba tiene "+str(contar_palabras_sin_acento(frase))+ " letras")
+print("La frase de prueba tiene "+str(contar_palabras_sin_acento(frase))+ " palabrass")
 
 print("-----------------------EJERCICIOS 3 ---------------------------")
 
@@ -24,7 +23,7 @@ texto ="Y yo me llamo Ralph"
 fichero.write(texto)
 fichero.close()
 
-def contar_palabras_archivo(fichero):
+def contar_palabras_archivo(str):
     with open(nombre_archivo, 'r') as archivo:
         texto = archivo.read() #No es un void, debe de igualarse a una variable
         return contar_palabras_sin_acento(texto)
@@ -54,38 +53,26 @@ print("-----------------------EJERCICIO 6 ---------------------------")
 
 lista = ["a", "v", "Caesar"]
 cadena = "Ave Caesar, los que van a morir te saludan"
-def contar_ocurrencias(lista, cadena):
+def contar_ocurrencias(list, str): #Se pone como parametro el tipo de dato directamente
     ocurrencias = {}
-    for palabra in lista:
-        ocurrencias[palabra] = cadena.count(palabra)
+    for palabra in list:
+        ocurrencias[palabra] = str.count(palabra) 
     return ocurrencias
 print("Las concurrencias de palabras en esta cadena son: "+str(contar_ocurrencias(lista, cadena)))
 
-print("-----------------------EJERCICIO 7 ---------------------------")
+print("-----------------------EJERCICIOS 7, 8, 9, 10---------------------------")
 
-def contar_ocurrencias_counter(lista, cadena):
-    ocurrencias = contar_ocurrencias(lista, cadena)
-    return Counter(ocurrencias)
+def contar_ocurrencias_counter(list, str):
+    if os.path.exists(str): #Ese String es el archivo que hemos creado. Llamamos a la libreria OS por si existe
+        with open(str, 'r') as archivo: #Usamos la funcion open para abrir el archivo (E8)
+            texto = archivo.read() #Usamos la funcion read para leerlo (E8)
+            ocurrencias = contar_ocurrencias(list, str) 
+        return Counter(ocurrencias) #CDevolvemos el objeto Counter con la ocurrencia (E7)
+    else:
+        print("Error: el archivo no existe.") #Mensaje de error por si el archivo no existe (E9)
 
-print("Las concurrencias de palabras en esta cadena con Counter son: "+str(contar_ocurrencias_counter(lista, cadena)))
-
-print("-----------------------EJERCICIO 8 ---------------------------")
-
-nombre_archivo2 = "texto_ejemplo.txt"
-lista_palabras2 = ["Si", "una", "mujer"]
-fichero2 = open(nombre_archivo2, 'w')
-texto2 ="Si una mujer tiene 1000 Me gusta y 500 comentarios en una foto, ¿Qué le falta? - ROPA"
-fichero2.write(texto2)
-texto2 = texto2.split()
-fichero2.close()
-def contar_ocurrencias_archivo(nombre_archivo2, lista_palabras2):
-    with open(nombre_archivo2, 'r') as archivo:
-        if os.path.isfile(nombre_archivo2):
-            texto = archivo.read()
-            return contar_ocurrencias(texto, lista_palabras2)
-
-print("Las concurrencias de palabras en este archivo con Counter son: "+str(contar_ocurrencias_archivo(nombre_archivo2, lista_palabras2)))
-
+resultado = contar_ocurrencias_counter(lista, nombre_archivo) #Llamamos a la funcion con una variable resultado
+print(resultado) #(E10)
 
 
 
