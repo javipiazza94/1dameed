@@ -62,7 +62,10 @@
     #Sintaxis --> nombretupla = (valor1, valor2). Se puede sin parentesis
     
     
-#Diccionarios
+#Diccionarios --> Son estructuras de datos que almacemam todo tipo de valores en forma de asociacion clave(unica):valor
+    #No estan ordenados
+    #Se pueden almacenar tuplas, listas, otros diccionarios, ademas de otros tipos de datos
+    #Se pueden alternar diferentes tipos de valores
 
 
 
