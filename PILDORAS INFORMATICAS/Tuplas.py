@@ -8,7 +8,7 @@ print(tupla.count(1994)) #vemos cuantas veces se repite un elemento
 print(len(tupla)) #indica el numero de elementos
 
 #Desempaquetado de tupla
-nombre, dia, mes, ano = tupla
+nombre, dia, mes, ano = tupla #Siempre en este orden y no al reves
 print(nombre)
 print(dia)
 print(mes)
