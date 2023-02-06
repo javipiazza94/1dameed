@@ -1,0 +1,176 @@
+# Asi se comenta en Python
+
+# En Python se identa (se hace una sangria) para organizar el codigo
+
+#Tipos de datos
+    #A) Booleanos ---> True o False
+    #B) Texto ---> str, van entrecomillas. Se pueden representar en bytes
+    #C) Numericos ---> int (enteros), float (decimales), complejos. Se pueden representar en binario o en octales
+
+#Operadores
+    #A) Aritmeticos ---> +, -, /, *, %, // (division entera), ** (exponente)
+    #B) Logicos ---> AND, OR, NOT
+    #C) Especiales ---> IS, IS NOT, IN, NOT IN
+    #D) Asignacion ---> = (igual), += (incremento), -= (decremento), *=, /=, %=, **=, //=
+    #E) Comparacion ---> == (igual que), != (no es igual que), > (mayor que), < (menor que), <=, >=
+#Operadores a nivel de bit
+    x | y: x OR y
+    x ^ y: x XOR y
+    x & y: a AND y
+    x << n: Desplazamiento a la izquierda n bits.
+    x >> n: Desplazamiento a la derecha n bits.
+    ~x: Devuelve los bits invertidos.
+    
+#Variable ---> Es un espacio de memoria que se puede cambiar durante el tiempo de ejecucion del programa
+    #nombre_variable = valor
+    #compone de letras, numeros y _
+    #la variable es definida por el contenido y no por el contenedor
+    #todas las variables son objetos
+    #se borran con la funcion del
+    # Cuando asignamos una variable, se crea una referencia (puntero) al objeto creado, en ese momento se determina el tipo de la variable. Por lo tanto cada vez que asignamos de nuevo la variable puede cambiar el tipo en tempo de ejecución.
+
+#Expresiones
+    #Una expresión es una combinación de variables, literales, operadores, funciones y expresiones, que tras su evaluación o cálculo nos devuelven un valor de un determinado tipo.
+    #La función eval() recibe una expresión como una cadena y la ejecuta. Ex: x=1, eval("x+1")
+    
+#Las comillas triples hacen saltos de linea
+#El flujo de ejecucion va de arriba hacia abajo, menos con los bucles y funciones.
+
+#Funciones ---> conjunto de lineas de codigo agrupadas en un bloque unitario que realizan una tarea especifica
+    #Pueden devolver valores
+    #Pueden tener parametros
+    #Se las llama metodos cuando se definen dentro de una clase
+    #Reutiliza codigo
+    #Sintaxis ---> def nombre_funcion(parametros(opcional)):
+        #codigo
+        #return (opcional)
+    #Ejecucion ---> nombre_funcion(parametros)
+    #predefinidas---> vienen por defecto
+    #propias ---> las creamos nosotros
+    #Responden a eventos y se llaman en otros archivos
+    #void ---> no se les asigna a una variable, se las llama directamente
+    #Con return--> Almacenan un valor y se les puede asignar a una variable. --> def funcion = nombrevariable
+    #Se declaran como def + nombrefuncion y se llaman con el nombre de la funcion
+    # Pueden recibir parametros de diferentes tipos o no
+    
+#Listas --> Son equivalentes a los arrays, vectores y arraylists. Estructuras de datos que almacenan varios valores en la RAM en una sola unidad
+    #Permite almacenar varios tipos de valores en una misma lista
+    #Se pueden expandir dinamicamente
+    #Se pueden recorrer con bucles
+    #Sintaxis --> nombrelista = [valor1, valor2]
+    #Tienen indices --> posiciones en la lista. Se empieza por el 0
+    #Operadores de pertenencia: Se puede comprobar si un elemento pertenece o no a una secuencia con los operadores in y not in.
+    #Concatenación: El operador + me permite unir datos de tipos secuenciales. No se pueden concatenar secuencias de tipo range y de tipo conjunto.
+    #Repetición: El operador * me permite repetir un dato de un tipo secuencial. No se pueden repetir secuencias de tipo range y de tipo conjunto.
+    #Slice (rebanada): Puedo obtener una subsecuencia de los datos de una secuencia. En los conjuntos no puedo obtener subconjuntos. Esta característica la estudiaremos más detenidamente en la unidad que estudiemos las listas.
+        lista[start:end] # Elementos desde la posición start hasta end-1
+        lista[start:] # Elementos desde la posición start hasta el final
+        lista[:end] # Elementos desde el principio hata la posición end-1
+        lista[:] # Todos Los elementos
+        lista[start:end:step] # Igual que el anterior pero dando step saltos.
+        Se pueden utilizar también índices negativos, por ejemplo: lista[::-1]
+    #Puedo modificar un dato de la secuencia indicando su posición.
+    #Otras funciones --> sorted, copy, list, len, max, min, remove, insert, reverse, append, count, index
+    #Se pueden hacer multidimensionales
+    
+#Tuplas --> Son listas inmutables
+    #No permiten anadir, borrar, index o mover elementos dentro de una lista
+    #Permite extraer porciones, pero sera una tupla nueva
+    #No permiten busquedas, pero si comprueba que sus elementos estan en la tupla
+    #Son mas rapidas, menos espacio en memoria, mayor optimizacion en ejecucion
+    #Pueden usarse como claves en un diccionario
+    #Formatean Strings
+    #Sintaxis --> nombretupla = (valor1, valor2). Se puede sin parentesis
+
+#Otras secuencias
+    #bytes (byte): Me permite guardar valores binarios representados por caracteres ASCII. Es un tipo inmutable.
+    #bytes (bytearray): En este caso son iguales que las anteriores, pero son de tipo mutables.
+    #Los conjuntos (set): Me permiten guardar conjuntos de datos, en los que no se existen repeticiones. Es un tipo mutable.
+    #Los conjuntos (frozenset): Son igUales que los anteriores, pero son tipos inmutables.
+    
+#Diccionarios --> Son estructuras de datos que almacemam todo tipo de valores en forma de asociacion clave(unica):valor
+    #No estan ordenados
+    #Se pueden almacenar tuplas, listas, otros diccionarios, ademas de otros tipos de datos
+    #Se pueden alternar diferentes tipos de valores
+    
+#Condicionales if --> Modifica el flujo de ejecucion de un programa
+    # Si se cumple (TRUE) ejecuta las instrucciones que tiene en su interior
+    # Si no se cumple (FALSE) no se ejecuta y sigue la ejecucuon normal (menos si hay un else)
+    # Sintaxis -->  #if condicion:
+                        #codifo
+                    #else:   Siempre va con un if detras, solo no
+                        #codigo
+    #Si no le metemos un elif el else se considera en el ultimo if, y no en todos los demas. Hace que se comporte como un solo bloque
+    #No tiene condicionales switch. Apuesta por la simplicidad
+    #Se pueden concadenar con operadores
+    #Or == o si no
+    
+#Bucles --> Sirve para iterar colecciones, estructuras de datos o repetir lineas de codigo
+    #Determinados = se sabe el numero de repeticiones --> for variable in elemento a recorrer
+    #Indeterminados = no se sabe --> while condicion: 
+    #Tiene una declaracion (repeticiones) y un codigo a ejecutar identado
+    #Instrucciones break, continue y pass
+        #break
+            Termina la ejecución del bucle, además no ejecuta el bloque de instrucciones indicado por la parte else.
+       #continue
+            Deja de ejecutar las restantes instrucciones del bucle y vuelve a iterar.
+        #pass
+            Indica una instrucción nula, es decir no se ejecuta nada. Pero no tenemos errores de sintaxis.
+    #Función zip.
+    Esta función crea una secuencia donde cada elemento es una tupla de los elementos de cada secuencia que toma cómo parámetro.
+
+
+#Funciones predefinidas
+    #Tenemos una serie de funciones predefinidas en python3:
+
+    abs()           dict()         help()          min()        setattr()
+    all()           dir()          hex()           next()       slice()
+    any()           divmod()       id()            object()     sorted()
+    ascii()         enumerate()    input()         oct()        staticmethod()
+    bin()           eval()         int()           open()       str()
+    bool()          exec()         isinstance()    ord()        sum()
+    bytearray()     filter()       issubclass()    pow()        super()
+    bytes()         float()        iter()          print()      tuple()
+    callable()      format()       len()           property()   type()
+    chr()           frozenset()    list()          range()      vars()
+    classmethod()   getattr()      locals()        repr()       zip()
+    compile()       globals()      map()           reversed()   __import__()
+    complex()       hasattr()      max()           round()
+    delattr()       hash()         memoryview()    set()
+        #Todas estas funciones y algunos elmentos comunes del lenguaje están definidas en el módulo builtins.
+        Algunos ejemplos de funciones
+        La entrada y salida de información se hacen con la función print y la función input:
+        Tenemos algunas funciones matemáticas como: abs, divmod, hex, max, min,…
+        Hay funciones que trabajan con caracteres y cadenas: ascii, chr, format, repr,…
+        Además tenemos funciones que crean o convierten a determinados tipos de datos: int, float, str, bool, range, dict, list, …
+
+#Funciones predefinidas que trabajan con números:
+    abs(x): Devuelve al valor absoluto de un número.
+    divmod(x,y): Toma como parámetro dos números, y devuelve una tubla con dos valores, la división entera, y el módulo o resto de la división.
+    hex(x): Devuelve una cadena con la representación hexadecimal del número que recibe como parámetro.
+    oct(x): Devuelve una cadena con la representación octal del número que recibe como parámetro.
+    bin(x): Devuelve una cadena con la representación binaria del número que recibe como parámetro.
+    pow(x,y): Devuelve la potencia de la base x elevedao al exponete y. Es similar al operador**`.
+    round(x,[y]): Devuelve un número real (float) que es el redondeo del número recibido como parámetro, podemos indicar un parámetro opcional que indica el número de decimales en el redondeo.
+
+#Constantes predefinidas
+    En el módulo builtins se definen las siguientes constantes:
+    True y False: Valores booleans
+    None especifica que alguna variables u objeto no tiene asignado ningún tipo.
+
+#Conversión de tipos
+    int(x): Convierte el valor a entero.
+    float(x): Convierte el valor a float.
+    complex(x): Convierte el valor a un complejo sin parte imaginaria.
+    complex(x,y): Convierta el valor a un complejo, cuya parte real es x y la parte imaginaria y.
+
+
+
+
+
+    
+    
+
+
+    
+    

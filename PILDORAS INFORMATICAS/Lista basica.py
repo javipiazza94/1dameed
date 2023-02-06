@@ -21,3 +21,10 @@ lista.pop()#Borra el ultimo elemento
 print(lista)
 print(lista3)
 
+LISTA = list(zip(range(1,4),["ana","juan","pepe"])) #FUNCION DE ZIP QUE AGRUPA VARIOS ELEMENTOS
+print(LISTA)
+
+
+
+
+

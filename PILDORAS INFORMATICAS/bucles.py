@@ -30,5 +30,6 @@ while edad<0 or edad>100:
     edad = int(input("Introduce tu edad de nuevo: "))
 print(f"Tu edad es {edad}")
 
-
-    
+#FOR con ZIP
+for x,y in zip(range(1,4),["ana","juan","pepe"]):
+    print(x,y)
