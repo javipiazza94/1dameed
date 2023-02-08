@@ -79,8 +79,11 @@
     #No permiten busquedas, pero si comprueba que sus elementos estan en la tupla
     #Son mas rapidas, menos espacio en memoria, mayor optimizacion en ejecucion
     #Pueden usarse como claves en un diccionario
+    #Permiten varios tipos de datos: int, Strings, tuplas, listas, rangos...
     #Formatean Strings
     #Sintaxis --> nombretupla = (valor1, valor2). Se puede sin parentesis
+    #Se pueden añadir mas elementos de una tupla con --> nombretupla+[datos]
+    #Metodos--> index y count
 
 #Otras secuencias
     #bytes (byte): Me permite guardar valores binarios representados por caracteres ASCII. Es un tipo inmutable.
@@ -174,7 +177,35 @@
 #Excepciones --> Son errores que ocurren en tiempo de ejecucion
     #Los programas son correctamente escritos pero son errores inesperados
     #Se genera un control de excepciones que captura dicha excepcion y continua con la ejecucion del programa sin pararlo
-    
+
+#Rangos --> Son secuencias cerradas de numeros. Sirve para los bucles.
+    #Crea intervalos
+    #Atributos: Start (por donde empieza), Stop(ultimo numero donde acaba), y step(como va paso a paso)
+
+#Cadenas --> Son caracteres codificados segun el codigo ASCII (basico), Unicode(2e32) o UTF-8
+    #ascii
+        En los principios de la informática los ordenadores se diseñaron para utilizar sólo caracteres ingleses, por lo tanto se creó una codificación de caracteres, llamada ascii (American Standard Code for Information Interchange) que utiliza 7 bits para codificar los 128 caracteres necesarios en el alfabeto inglés. Posteriormente se extendió esta codificación para incluir caracteres no ingleses. Al utilizar 8 bits se pueden representar 256 caracteres. De esta forma para codificar el alfabeto latino aparece la codificación ISO-8859-1 o Latín 1.
+    #Unicode
+        La codificación unicode nos permite representar todos los caracteres de todos los alfabetos del mundo, en realidad permite representar más de un millón de caracteres, ya que utiliza 32 bits para su representación, pero en la realidad sólo se definen unos 110.000 caracteres.
+    #UTF-8
+        Es un sistema de codificación de longitud variable para Unicode.
+        Esto significa que los caracteres pueden utilizar diferente número de bytes.
+    En Python 3.x -->  tres tipos: Unicode, Byte y Bytearray.
+        El tipo unicode permite caracteres de múltiples lenguajes y cada carácter en una cadena tendrá un valor inmutable.
+        El tipo byte sólo permitirá caracteres ASCII y los caracteres son también inmutables.
+        El tipo bytearray es como el tipo byte pero, en este caso, los caracteres de una cadena si son mutables.
+        “Los bytes no son caracteres, los bytes son bytes; un carácter es en realidad una abstracción; y una cadena de caracteres es una sucesión de abstracciones”.
+    Funciones chr() y ord(), len, max, min, sorted.
+        chr(i): Nos devuelve el carácter Unicode que representa el código i.
+        ord(c): recibe un carácter c y devuelve el código unicode correspondiente.
+    Constructor str
+    Son inmutables
+    Se comparan caracter a caracter. Se ordenan alfabeticamente
+    bin(numero): Devuelve una cadena de caracteres que corresponde a la representación binaria del número recibido.
+    ascii(objeto): Devuelve también la representación en cadena de un objeto pero en este caso muestra los caracteres con un código de escape
+    Los metodos no cambian las cadenas, te devuelven otros valores modificados
+
+
 
 
 
