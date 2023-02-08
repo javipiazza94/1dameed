@@ -171,6 +171,10 @@
     Utiles con valores infinitos
     Yield form --> Sirve para simplificar bucles anidados. Es como un array multidimensionales
 
+#Excepciones --> Son errores que ocurren en tiempo de ejecucion
+    #Los programas son correctamente escritos pero son errores inesperados
+    #Se genera un control de excepciones que captura dicha excepcion y continua con la ejecucion del programa sin pararlo
+    
 
 
 

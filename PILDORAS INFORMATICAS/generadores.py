@@ -17,3 +17,10 @@ def paresSecuencia(limite2):
 devuelve_pares = paresSecuencia(limite2)
 for i in devuelve_pares:
     print(i)
+    
+def devuelve_nazis(*nazis): #el * indica que va a recibir un numero indeterminado de elementos por parametro en forma de lista
+    for i in nazis:
+        #for j in i:
+            yield from i
+panitas = devuelve_nazis("Goering", "Goth", "Eichmann", "Mengele", "Rommel", "Von Paulus", "Hess", "Goebbels")
+print(next(panitas)) #nos devuelve el primer elemento. Con los for anidados nos devuelve el primer elemento de la primera palabra
