@@ -33,3 +33,25 @@ print(f"Tu edad es {edad}")
 #FOR con ZIP
 for x,y in zip(range(1,4),["ana","juan","pepe"]):
     print(x,y)
+    
+#CONTINUE, PASS, ELSE
+palabra = "Con los dedos de las manos con los dedos de los pies con la polla y los cojones todos suman veintitres"
+print(len(palabra))
+contador = 0
+for iterable in palabra:
+    if iterable == ' ': #No pilla la el espacio
+        continue
+    contador+=1
+print(contador) #Contamos palabras
+
+class Prueba:
+    pass #Ignora el codigo y devuelve a null
+
+correo = input("Introduce un correo: ")
+for i in correo:
+    if i =='@':
+        print("es una direccion valida")
+else: #Es del for, no del if
+    print("No es una direccion valida")
+
+    
