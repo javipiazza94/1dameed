@@ -107,26 +107,30 @@
     a1{"clave1"} = valor --> para anadir claves/valores individualmente
     True
     Operaciones básicas con diccionarios
-        >>> a = dict(one=1, two=2, three=3)
-        len(): Devuelve número de elementos del diccionario.
-        >>> len(a)
-        3
-        Indexación: Podemos obtener el valor de un campo o cambiarlo (si no existe el campo nos da una excepción KeyError):
-        >>> a["one"]
-        1
-        >>> a["one"]+=1
-        >>> a
-        {'three': 3, 'one': 2, 'two': 2}
-        del():Podemos eliminar un elemento, si no existe el campo nos da una excepción KeyError:
-        >>> del(a["one"])
-        >>> a
-        {'three': 3, 'two': 2}
+        a = dict(one=1, two=2, three=3)
+            len(): Devuelve número de elementos del diccionario.
+                >>> len(a)
+                    3
+            Indexación: Podemos obtener el valor de un campo o cambiarlo (si no existe el campo nos da una excepción KeyError):
+                >>> a["one"]
+                    1
+                >>> a["one"]+=1
+                >>> a
+                {'three': 3, 'one': 2, 'two': 2}
+            del():Podemos eliminar un elemento, si no existe el campo nos da una excepción KeyError:
+                >>> del(a["one"])
+                >>> a
+                {'three': 3, 'two': 2}
         Operadores de pertenencia: key in d y key not in d.
-        >>> "two" in a
-        True
+                >>> "two" in a
+                True
         iter(): Nos devuelve un iterador de las claves.
-        >>> next(iter(a))
-        'three'
+                >>> next(iter(a))
+                'three'
+    METODOS BASICOS
+        dict1.clear       dict1.get         dict1.pop         dict1.update      
+        dict1.copy        dict1.items       dict1.popitem     dict1.values      
+        dict1.fromkeys    dict1.keys        dict1.setdefault 
         
 #Condicionales if --> Modifica el flujo de ejecucion de un programa
     # Si se cumple (TRUE) ejecuta las instrucciones que tiene en su interior
