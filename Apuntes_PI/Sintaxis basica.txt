@@ -1,0 +1,269 @@
+# Asi se comenta en Python
+
+# En Python se identa (se hace una sangria) para organizar el codigo
+
+#Tipos de datos
+    #A) Booleanos ---> True o False
+    #B) Texto ---> str, van entrecomillas. Se pueden representar en bytes
+    #C) Numericos ---> int (enteros), float (decimales), complejos. Se pueden representar en binario o en octales
+
+#Operadores
+    #A) Aritmeticos ---> +, -, /, *, %, // (division entera), ** (exponente)
+    #B) Logicos ---> AND, OR, NOT
+    #C) Especiales ---> IS, IS NOT, IN, NOT IN
+    #D) Asignacion ---> = (igual), += (incremento), -= (decremento), *=, /=, %=, **=, //=
+    #E) Comparacion ---> == (igual que), != (no es igual que), > (mayor que), < (menor que), <=, >=
+#Operadores a nivel de bit
+    x | y: x OR y
+    x ^ y: x XOR y
+    x & y: a AND y
+    x << n: Desplazamiento a la izquierda n bits.
+    x >> n: Desplazamiento a la derecha n bits.
+    ~x: Devuelve los bits invertidos.
+    
+#Variable ---> Es un espacio de memoria que se puede cambiar durante el tiempo de ejecucion del programa
+    #nombre_variable = valor
+    #compone de letras, numeros y _
+    #la variable es definida por el contenido y no por el contenedor
+    #todas las variables son objetos
+    #se borran con la funcion del
+    # Cuando asignamos una variable, se crea una referencia (puntero) al objeto creado, en ese momento se determina el tipo de la variable. Por lo tanto cada vez que asignamos de nuevo la variable puede cambiar el tipo en tempo de ejecución.
+
+#Expresiones
+    #Una expresión es una combinación de variables, literales, operadores, funciones y expresiones, que tras su evaluación o cálculo nos devuelven un valor de un determinado tipo.
+    #La función eval() recibe una expresión como una cadena y la ejecuta. Ex: x=1, eval("x+1")
+    
+#Las comillas triples hacen saltos de linea
+#El flujo de ejecucion va de arriba hacia abajo, menos con los bucles y funciones.
+
+#Funciones ---> conjunto de lineas de codigo agrupadas en un bloque unitario que realizan una tarea especifica
+    #Pueden devolver valores
+    #Pueden tener parametros
+    #Se las llama metodos cuando se definen dentro de una clase
+    #Reutiliza codigo
+    #Sintaxis ---> def nombre_funcion(parametros(opcional)):
+        #codigo
+        #return (opcional)
+    #Ejecucion ---> nombre_funcion(parametros)
+    #predefinidas---> vienen por defecto
+    #propias ---> las creamos nosotros
+    #Responden a eventos y se llaman en otros archivos
+    #void ---> no se les asigna a una variable, se las llama directamente
+    #Con return--> Almacenan un valor y se les puede asignar a una variable. --> def funcion = nombrevariable
+    #Se declaran como def + nombrefuncion y se llaman con el nombre de la funcion
+    # Pueden recibir parametros de diferentes tipos o no
+    
+#Listas --> Son equivalentes a los arrays, vectores y arraylists. Estructuras de datos que almacenan varios valores en la RAM en una sola unidad
+    #Permite almacenar varios tipos de valores en una misma lista
+    #Se pueden expandir dinamicamente
+    #Se pueden recorrer con bucles
+    #Sintaxis --> nombrelista = [valor1, valor2]
+    #Tienen indices --> posiciones en la lista. Se empieza por el 0
+    #Operadores de pertenencia: Se puede comprobar si un elemento pertenece o no a una secuencia con los operadores in y not in.
+    #Concatenación: El operador + me permite unir datos de tipos secuenciales. No se pueden concatenar secuencias de tipo range y de tipo conjunto.
+    #Repetición: El operador * me permite repetir un dato de un tipo secuencial. No se pueden repetir secuencias de tipo range y de tipo conjunto.
+    #Slice (rebanada): Puedo obtener una subsecuencia de los datos de una secuencia. En los conjuntos no puedo obtener subconjuntos. Esta característica la estudiaremos más detenidamente en la unidad que estudiemos las listas.
+        lista[start:end] # Elementos desde la posición start hasta end-1
+        lista[start:] # Elementos desde la posición start hasta el final
+        lista[:end] # Elementos desde el principio hata la posición end-1
+        lista[:] # Todos Los elementos
+        lista[start:end:step] # Igual que el anterior pero dando step saltos.
+        Se pueden utilizar también índices negativos, por ejemplo: lista[::-1]
+    #Puedo modificar un dato de la secuencia indicando su posición.
+    #Otras funciones --> sorted, copy, list, len, max, min, remove, insert, reverse, append, count, index
+    #Se pueden hacer multidimensionales
+    
+#Tuplas --> Son listas inmutables
+    #No permiten anadir, borrar, index o mover elementos dentro de una lista
+    #Permite extraer porciones, pero sera una tupla nueva
+    #No permiten busquedas, pero si comprueba que sus elementos estan en la tupla
+    #Son mas rapidas, menos espacio en memoria, mayor optimizacion en ejecucion
+    #Pueden usarse como claves en un diccionario
+    #Permiten varios tipos de datos: int, Strings, tuplas, listas, rangos...
+    #Formatean Strings
+    #Sintaxis --> nombretupla = (valor1, valor2). Se puede sin parentesis
+    #Se pueden añadir mas elementos de una tupla con --> nombretupla+[datos]
+    #Metodos--> index y count
+
+#Otras secuencias
+    #bytes (byte): Me permite guardar valores binarios representados por caracteres ASCII. Es un tipo inmutable.
+    #bytes (bytearray): En este caso son iguales que las anteriores, pero son de tipo mutables.
+    #Los conjuntos (set): Me permiten guardar conjuntos de datos, en los que no se existen repeticiones. Es un tipo mutable.
+    #Los conjuntos (frozenset): Son igUales que los anteriores, pero son tipos inmutables.
+    
+#Diccionarios --> Son estructuras de datos que almacemam todo tipo de valores en forma de asociacion clave(unica):valor
+    #No estan ordenados
+    #Se pueden almacenar tuplas, listas, otros diccionarios, ademas de otros tipos de datos
+    #Se pueden alternar diferentes tipos de valores
+    
+#Condicionales if --> Modifica el flujo de ejecucion de un programa
+    # Si se cumple (TRUE) ejecuta las instrucciones que tiene en su interior
+    # Si no se cumple (FALSE) no se ejecuta y sigue la ejecucuon normal (menos si hay un else)
+    # Sintaxis -->  #if condicion:
+                        #codifo
+                    #else:   Siempre va con un if detras, solo no
+                        #codigo
+    #Si no le metemos un elif el else se considera en el ultimo if, y no en todos los demas. Hace que se comporte como un solo bloque
+    #No tiene condicionales switch. Apuesta por la simplicidad
+    #Se pueden concadenar con operadores
+    #Or == o si no
+    
+#Bucles --> Sirve para iterar colecciones, estructuras de datos o repetir lineas de codigo
+    #Determinados = se sabe el numero de repeticiones --> for variable in elemento a recorrer
+    #Indeterminados = no se sabe --> while condicion: 
+    #Tiene una declaracion (repeticiones) y un codigo a ejecutar identado
+    #Instrucciones break, continue y pass
+        #break
+            Termina la ejecución del bucle, además no ejecuta el bloque de instrucciones indicado por la parte else.
+       #continue
+            Deja de ejecutar las restantes instrucciones del bucle y vuelve a iterar.
+        #pass
+            Indica una instrucción nula, es decir no se ejecuta nada. Pero no tenemos errores de sintaxis.
+    #Función zip.
+    Esta función crea una secuencia donde cada elemento es una tupla de los elementos de cada secuencia que toma cómo parámetro.
+
+
+#Funciones predefinidas
+         #Tenemos una serie de funciones predefinidas en python3:
+
+            abs()           dict()         help()          min()        setattr()
+            all()           dir()          hex()           next()       slice()
+            any()           divmod()       id()            object()     sorted()
+            ascii()         enumerate()    input()         oct()        staticmethod()
+            bin()           eval()         int()           open()       str()
+            bool()          exec()         isinstance()    ord()        sum()
+            bytearray()     filter()       issubclass()    pow()        super()
+            bytes()         float()        iter()          print()      tuple()
+            callable()      format()       len()           property()   type()
+            chr()           frozenset()    list()          range()      vars()
+            classmethod()   getattr()      locals()        repr()       zip()
+            compile()       globals()      map()           reversed()   __import__()
+            complex()       hasattr()      max()           round()
+            delattr()       hash()         memoryview()    set()
+        #Todas estas funciones y algunos elmentos comunes del lenguaje están definidas en el módulo builtins.
+        La entrada y salida de información se hacen con la función print y la función input:
+        Hay funciones que trabajan con caracteres y cadenas: ascii, chr, format, repr,…
+        Además tenemos funciones que crean o convierten a determinados tipos de datos: int, float, str, bool, range, dict, list, …
+
+#Funciones predefinidas que trabajan con números:
+    abs(x): Devuelve al valor absoluto de un número.
+    divmod(x,y): Toma como parámetro dos números, y devuelve una tubla con dos valores, la división entera, y el módulo o resto de la división.
+    hex(x): Devuelve una cadena con la representación hexadecimal del número que recibe como parámetro.
+    oct(x): Devuelve una cadena con la representación octal del número que recibe como parámetro.
+    bin(x): Devuelve una cadena con la representación binaria del número que recibe como parámetro.
+    pow(x,y): Devuelve la potencia de la base x elevedao al exponete y. Es similar al operador**`.
+    round(x,[y]): Devuelve un número real (float) que es el redondeo del número recibido como parámetro, podemos indicar un parámetro opcional que indica el número de decimales en el redondeo.
+
+#Constantes predefinidas
+    En el módulo builtins se definen las siguientes constantes:
+    True y False: Valores booleans
+    None especifica que alguna variables u objeto no tiene asignado ningún tipo.
+
+#Conversión de tipos
+    int(x): Convierte el valor a entero.
+    float(x): Convierte el valor a float.
+    complex(x): Convierte el valor a un complejo sin parte imaginaria.
+    complex(x,y): Convierta el valor a un complejo, cuya parte real es x y la parte imaginaria y.
+
+#Generadores
+    Estructuras que almcenan valores en una funcion en objetos iterables y que se pueden recorrer con bucles
+    Se almacenan de uno en uno, se quedan en estado de pausa hasta que llega el siguiente hasta completar, en lugar de todo de golpe
+    Son mas eficientes que las fucniones tradicionales
+    Utiles con valores infinitos
+    Yield form --> Sirve para simplificar bucles anidados. Es como un array multidimensionales
+
+#Excepciones --> Son errores que ocurren en tiempo de ejecucion
+    #Los programas son correctamente escritos pero son errores inesperados
+    #Se genera un control de excepciones que captura dicha excepcion y continua con la ejecucion del programa sin pararlo
+
+#Rangos --> Son secuencias cerradas de numeros. Sirve para los bucles.
+    #Crea intervalos
+    #Atributos: Start (por donde empieza), Stop(ultimo numero donde acaba), y step(como va paso a paso)
+
+#Cadenas --> Son caracteres codificados segun el codigo ASCII (basico), Unicode(2e32) o UTF-8
+    #ascii
+        En los principios de la informática los ordenadores se diseñaron para utilizar sólo caracteres ingleses, por lo tanto se creó una codificación de caracteres, llamada ascii (American Standard Code for Information Interchange) que utiliza 7 bits para codificar los 128 caracteres necesarios en el alfabeto inglés. Posteriormente se extendió esta codificación para incluir caracteres no ingleses. Al utilizar 8 bits se pueden representar 256 caracteres. De esta forma para codificar el alfabeto latino aparece la codificación ISO-8859-1 o Latín 1.
+    #Unicode
+        La codificación unicode nos permite representar todos los caracteres de todos los alfabetos del mundo, en realidad permite representar más de un millón de caracteres, ya que utiliza 32 bits para su representación, pero en la realidad sólo se definen unos 110.000 caracteres.
+    #UTF-8
+        Es un sistema de codificación de longitud variable para Unicode.
+        Esto significa que los caracteres pueden utilizar diferente número de bytes.
+    En Python 3.x -->  tres tipos: Unicode, Byte y Bytearray.
+        El tipo unicode permite caracteres de múltiples lenguajes y cada carácter en una cadena tendrá un valor inmutable.
+        El tipo byte sólo permitirá caracteres ASCII y los caracteres son también inmutables.
+        El tipo bytearray es como el tipo byte pero, en este caso, los caracteres de una cadena si son mutables.
+        “Los bytes no son caracteres, los bytes son bytes; un carácter es en realidad una abstracción; y una cadena de caracteres es una sucesión de abstracciones”.
+    Funciones chr() y ord(), len, max, min, sorted.
+        chr(i): Nos devuelve el carácter Unicode que representa el código i.
+        ord(c): recibe un carácter c y devuelve el código unicode correspondiente.
+    Constructor str
+    Son inmutables
+    Se comparan caracter a caracter. Se ordenan alfabeticamente
+    bin(numero): Devuelve una cadena de caracteres que corresponde a la representación binaria del número recibido.
+    ascii(objeto): Devuelve también la representación en cadena de un objeto pero en este caso muestra los caracteres con un código de escape
+    Los metodos no cambian las cadenas, te devuelven otros valores modificados
+    Metodos:
+        cadena.capitalize    cadena.isalnum       cadena.join          cadena.rsplit
+        cadena.casefold      cadena.isalpha       cadena.ljust         cadena.rstrip
+        cadena.center        cadena.isdecimal     cadena.lower         cadena.split
+        cadena.count         cadena.isdigit       cadena.lstrip        cadena.splitlines
+        cadena.encode        cadena.isidentifier  cadena.maketrans     cadena.startswith
+        cadena.endswith      cadena.islower       cadena.partition     cadena.strip
+        cadena.expandtabs    cadena.isnumeric     cadena.replace       cadena.swapcase
+        cadena.find          cadena.isprintable   cadena.rfind         cadena.title
+        cadena.format        cadena.isspace       cadena.rindex        cadena.translate
+        cadena.format_map    cadena.istitle       cadena.rjust         cadena.upper
+        cadena.index         cadena.isupper       cadena.rpartition    cadena.zfill
+
+#Bytes y BytesArrays --> Son tipos que permiten guardar datos binarios
+    byte: inmutable. Codigo ascii 256.
+    byteArray: mutable. Se pueden modificar con metodos predefinidos
+    Se representan con --> b"dato"
+
+    byte1.capitalize  byte1.index       byte1.join        byte1.rindex      byte1.strip
+    byte1.capitalize  byte1.index       byte1.join        byte1.rindex      byte1.strip
+    byte1.center      byte1.isalnum     byte1.ljust       byte1.rjust       byte1.swapcase
+    byte1.count       byte1.isalpha     byte1.lower       byte1.rpartition  byte1.title
+    byte1.decode      byte1.isdigit     byte1.lstrip      byte1.rsplit      byte1.translate
+    byte1.endswith    byte1.islower     byte1.maketrans   byte1.rstrip      byte1.upper
+    byte1.expandtabs  byte1.isspace     byte1.partition   byte1.split       byte1.zfill
+    byte1.find        byte1.istitle     byte1.replace     byte1.splitlines
+    byte1.fromhex     byte1.isupper     byte1.rfind       byte1.startswith
+
+    bytearray1.append      bytearray1.index       bytearray1.lstrip      bytearray1.rstrip
+    bytearray1.capitalize  bytearray1.insert      bytearray1.maketrans   bytearray1.split
+    bytearray1.center      bytearray1.isalnum     bytearray1.partition   bytearray1.splitlines
+    bytearray1.clear       bytearray1.isalpha     bytearray1.pop         bytearray1.startswith
+    bytearray1.copy        bytearray1.isdigit     bytearray1.remove      bytearray1.strip
+    bytearray1.count       bytearray1.islower     bytearray1.replace     bytearray1.swapcase
+    bytearray1.decode      bytearray1.isspace     bytearray1.reverse     bytearray1.title
+    bytearray1.endswith    bytearray1.istitle     bytearray1.rfind       bytearray1.translate
+    bytearray1.expandtabs  bytearray1.isupper     bytearray1.rindex      bytearray1.upper
+    bytearray1.extend      bytearray1.join        bytearray1.rjust       bytearray1.zfill
+    bytearray1.find        bytearray1.ljust       bytearray1.rpartition
+    bytearray1.fromhex     bytearray1.lower       bytearray1.rsplit
+    Si nos fijamos la mayoría de los métodos en el caso de los bytes son los de las cadenas de caracteres, y en los bytearray encontramos también métodos propios de las listas.
+
+#Iterador
+    Un objeto iterable es aquel que puede devolver un iterador.
+    Normalmente las colecciones que hemos estudiados son iterables.
+    Un iterador me permite recorrer los elementos del objeto iterable.
+    Para recorrer el iterador, utilizamos la función next()
+    La función reversed() devuelve un iterador con los elementos invertidos, desde el último al primero.
+    El módulo itertools contiene distintas funciones que nos devuelven iteradores.
+    cycle(): devuelve una secuencia infinita.
+    count(): Devuelve un iterador infinito.
+    islice(): Retorna un iterador finito.
+    Un generador es un tipo concreto de iterador. Es una función que permite obtener sus resultados paso a paso.
+
+
+
+
+
+
+    
+    
+
+
+    
+    
