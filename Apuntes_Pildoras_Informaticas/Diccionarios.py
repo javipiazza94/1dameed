@@ -14,3 +14,8 @@ print(Palmares)
 print(Palmares.keys()) #devuelve las claves
 print(Palmares.values()) #devuelve los valores
 print(len(Palmares)) #devuelve la longitud
+
+#Diccionarios complejos
+Alumno = {"nombre": "Alejandro", "edad": 22, "direccion":{"Calle": "Francisco Franco", "numero": 36, "Codigo Postal":1041936}, "notas": (8,7,9,10,10,5)}
+print(Alumno)
+print(Alumno["notas"][3]) #Para acceder a un campo especifico
