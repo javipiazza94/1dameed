@@ -1,0 +1,2 @@
+# Se usa el __all__ = ['nombrepaqueteA' , 'nombrepaqueteB'] para seleccionar los paquetes especificos con el import (paquete) from * (son todos los modulos del paquete a importar)
+# Busca evitar cargar paquetes innecesarios
