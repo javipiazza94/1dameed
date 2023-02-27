@@ -292,7 +292,36 @@
     islice(): Retorna un iterador finito.
     Un generador es un tipo concreto de iterador. Es una función que permite obtener sus resultados paso a paso.
 
-
+# Ficheros
+    Sirven para abrir ficheros externos y operar con ellos
+    La función open() se utiliza normalmente con dos parámetros (fichero con el que vamos a trabajar y modo de acceso) y nos devuelve un objeto de tipo fichero.
+    El fichero abierto siempre hay que cerrarlo con el método close()
+    class '_io.TextIOWrapper'
+    Los modos que podemos indicar son los siguientes:
+        Añadido en modo binario. Crea si éste no existe
+        r	Solo lectura	Al inicio del archivo
+        rb	Solo lectura en modo binario	
+        r+	Lectura y escritura	Al inicio del archivo
+        rb+	Lectura y escritura binario	Al inicio del archivo
+        w	Solo escritura. Sobreescribe si existe. Crea el archivo si no existe.	Al inicio del archivo
+        wb	Solo escritura en modo binario. Sobreescribe si existe. Crea el archivo si no existe.	Al inicio del archivo
+        w+	Escritura y lectura. Sobreescribe si existe. Crea el archivo si no existe.	Al inicio del archivo
+        wb+	Escritura y lectura binaria. Sobreescribe si existe. Crea el archivo si no existe.	Al inicio del archivo
+        a	Añadido (agregar contenido). Crea el archivo si no existe.	Si el archivo existe, al final de éste. Si el archivo no existe, al comienzo.
+        ab		Si el archivo existe, al final de éste. Si el archivo no existe, al comienzo.
+        a+	Añadido y lectura. Crea el archivo si no existe.	Si el archivo existe, al final de éste. Si el archivo no existe, al comienzo.
+        ab+	Añadido y lectura en binario. Crea el archivo si no existe	Si el archivo existe, al final de éste. Si el archivo no existe, al comienzo.
+    Atributos:
+        closed: retorna True si el archivo se ha cerrado. De lo contrario, False.
+        mode: retorna el modo de apertura.
+        name: retorna el nombre del archivo
+        encoding: retorna la codificación de caracteres de un archivo de texto
+    Metodos:
+        Read(), Writeline(), Seek(), 
+    Apertura:
+        with open("ejemplo.txt", "r") as archivo: 
+        contenido = archivo.read()
+        archivo.close()
 
 
 
