@@ -210,7 +210,25 @@
 
 #Excepciones --> Son errores que ocurren en tiempo de ejecucion
     #Los programas son correctamente escritos pero son errores inesperados
-    #Se genera un control de excepciones que captura dicha excepcion y continua con la ejecucion del programa sin pararlo
+    #Se genera un control de excepciones que captura dicha excepcion y continua con la ejecucion del programa sin pararlo. Se adelanta al error
+    #Manejando excepciones. try, except, else, finally:
+        >>>   while True:
+        ...   try:
+        ...     x = int(input("Introduce un número:"))
+        ...     break
+        ...   except ValueError:
+        ...     print ("Debes introducir un número")
+        ...   finally:
+        ...     print("Terminamos el programa")
+        1)Se ejecuta el bloque de instrucciones de try.
+        2)Si no se produce la excepción, el bloque de except no se ejecuta y continúa la ejecución secuencia.
+        3)Si se produce una excepción, el resto del bloque try no se ejecuta, si la excepción que se ha produce corresponde con la indicada en except se salta a ejecutar el bloque de instrucciones except.        
+        4)Si la excepción producida no se corresponde con las indicadas en except se pasa a otra instrucción try, si finalmente no hay un manejador nos dará un error y el programa terminará.
+        Un bloque except puede manejar varios tipos de excepciones:
+        Por último indicar que podemos indicar una clausula finally para indicar un bloque de instrucciones que siempre se debe ejecutar, independientemente de la excepción se haya producido o no.
+        ... except (RuntimeError, TypeError, NameError):
+        ...     pass
+
 
 #Rangos --> Son secuencias cerradas de numeros. Sirve para los bucles.
     #Crea intervalos
@@ -322,6 +340,26 @@
         with open("ejemplo.txt", "r") as archivo: 
         contenido = archivo.read()
         archivo.close()
+    Ficheros JSON
+        JSON	Python
+        object	dict
+        array	list
+        string	str
+        number (int)	int
+        number (real)	float
+        true	True
+        false	False
+        null	None
+
+#Modulos --> Son los archivos .py de Python
+    Se organizan en paquetes
+    Se pueden importar mediante el comando "import"
+    Se pueden importar clases o funciones de los modulos mediante: from nombremodulo import nombrefuncion/clase
+    Se pueden crear alias a los elementos importados para llamarlos con as + nombrealias
+    Se importan los modulos de un paquete con import nombrepaquete.nombremodulo
+    Hay modulos precompilados y predefinidos como sys, os, subprocess, math, o tkinter
+    
+
 
 
 
