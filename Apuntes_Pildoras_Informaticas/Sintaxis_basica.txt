@@ -25,6 +25,7 @@
     #nombre_variable = valor
     #compone de letras, numeros y _
     #la variable es definida por el contenido y no por el contenedor
+    Una variable local se declara en su ámbito de uso (en el programa principal y dentro de una función) y una global fuera de su ámbito para que se pueda utilizar en cualquier función que la declare como global
     #todas las variables son objetos
     #se borran con la funcion del
     # Cuando asignamos una variable, se crea una referencia (puntero) al objeto creado, en ese momento se determina el tipo de la variable. Por lo tanto cada vez que asignamos de nuevo la variable puede cambiar el tipo en tempo de ejecución.
@@ -37,7 +38,12 @@
 #El flujo de ejecucion va de arriba hacia abajo, menos con los bucles y funciones.
 
 #Funciones ---> conjunto de lineas de codigo agrupadas en un bloque unitario que realizan una tarea especifica
+    La programación estructural y modular se lleva a cabo en python3 con la definición de funciones.
+    La programación estructurada es un paradigma de programación orientado a mejorar la claridad, calidad y tiempo de desarrollo de un programa de ordenador, utilizando únicamente subrutinas (funciones o procedimientos) y tres estructuras: secuencia, alternativas y repetitivas.
+    La programación modular es un paradigma de programación que consiste en dividir un programa en módulos o subprogramas con el fin de hacerlo más legible y manejable
     #Pueden devolver valores
+    Las funciones son objetos function
+    Se pueden guardar esos objetos en otras variables
     #Pueden tener parametros
     #Se las llama metodos cuando se definen dentro de una clase
     #Reutiliza codigo
@@ -47,12 +53,19 @@
     #Ejecucion ---> nombre_funcion(parametros)
     #predefinidas---> vienen por defecto
     #propias ---> las creamos nosotros
+    Se pueden asociar en forma de keyword los valores de los parametros de la funcion con su formal al llamarla
+    Por defecto los valores de los parametros se llaman en forma de posicion
+    Se pueden hacer llamadas un numero indeterminado de parametros posicionales con el argumento args (devuelve una tupla que se puede recorrer)
+    Evidentemente si se pasa un valor de un objeto inmutable, su valor no se podrá cambiar dentro de la función
+    Sin embargo si pasamos un objeto de un tipo mutable, si podremos cambiar su valor
     #Responden a eventos y se llaman en otros archivos
     #void ---> no se les asigna a una variable, se las llama directamente
     #Con return--> Almacenan un valor y se les puede asignar a una variable. --> def funcion = nombrevariable
     #Se declaran como def + nombrefuncion y se llaman con el nombre de la funcion
     # Pueden recibir parametros de diferentes tipos o no
-    
+    Parámetros formales: Son las variables que recibe la función, se crean al definir la función y son los llamados. Su contenido lo recibe al realizar la llamada a la función de los parámetro reales. Los parámetros formales son variables locales dentro de la función.
+    Parámetros reales: Son la expresiones que se utilizan en la llamada de la función, sus valores se copiarán en los parámetros formales. Son los datos que introducimos
+
 #Listas --> Son equivalentes a los arrays, vectores y arraylists. Estructuras de datos que almacenan varios valores en la RAM en una sola unidad
     #Permite almacenar varios tipos de valores en una misma lista
     #Se pueden expandir dinamicamente
